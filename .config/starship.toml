@@ -20,65 +20,47 @@ $line_break\
 $character
 """
 
-palette = 'default'
+palette = "rose-pine-moon"
 
-[palettes.default]
-red = '#f7768e'
-orange = '#ff9e64'
-yellow = '#e0af68'
-grey = '#cfc9c2'
-green = '#9ece6a'
-cyan = '#73daca'
-bright-cyan = '#b4f9f8'
-dark-cyan = '#2ac3de'
-bright-blue = '#7dcfff'
-bright-purple = '#7aa2f7'
-purple = '#bb9af7'
-light-1 = '#c0caf5'
-light-2 = '#a9b1d6'
-light-3 = '#9aa5ce'
-dark-1 = '#565f89'
-dark-2 = '#414868'
-dark-3 = '#1a1b26'
-
-color_ok = 'green'
-color_danger = 'red'
-color_caution = 'yellow'
-
-color_os = 'red'
-color_username = 'red'
-color_directory = 'yellow'
-color_env = "bright-blue"
-color_git = 'cyan'
+[palettes.rose-pine-moon]
+overlay = '#393552'
+love = '#eb6f92'
+gold = '#f6c177'
+rose = '#ea9a97'
+pine = '#3e8fb0'
+foam = '#9ccfd8'
+iris = '#c4a7e7'
 
 [os]
 disabled = false
-style = "fg:color_os"
+style = "fg:love"
 format = '[$symbol]($style)'
 
+
 [os.symbols]
-CachyOS = ""
+CachyOS = "  "
+Arch = " 󰣇 "
 
 [username]
 show_always = true
 style_user = "fg:color_username"
-style_root = "bold fg:color_danger"
+style_root = "bold fg:iris"
 format = '[ $user ]($style)'
 
 [directory]
-truncation_length = 0
+truncation_length = 3
 truncate_to_repo = true
 format = '[ $path ]($style)'
-style = "fg:color_directory"
-read_only_style = "fg:color_directory"
-repo_root_style = "bold fg:color_directory"
+style = "fg:pine"
+read_only_style = "fg:pine"
+repo_root_style = "bold fg:pine"
 read_only = " "
 truncation_symbol = ".../"
 home_symbol = "~"
 
 [git_branch]
 symbol = ""
-style = "fg:color_git"
+style = "fg:foam"
 format = '[( $symbol $branch )]($style)'
 only_attached = true
 ignore_branches = []
@@ -88,7 +70,7 @@ always_show_remote = false
 disabled = false
 
 [git_commit]
-style = "fg:color_git"
+style = "fg:foam"
 format = "[(( $tag)( @$hash) )]($style)"
 commit_hash_length = 7
 only_detached = true
@@ -115,8 +97,8 @@ disabled = false
 
 [git_metrics]
 format = '[(([+$added]($added_style))([-$deleted]($deleted_style)) )](fg:color_git)'
-added_style = "fg:color_git_added"
-deleted_style = "fg:color_git_deleted"
+added_style = "fg:love"
+deleted_style = "fg:love"
 only_nonzero_diffs = true
 disabled = false
 
@@ -136,31 +118,32 @@ disabled = false
 format = '[$symbol($version(->$name) )]($style)'
 version_format = '${raw}'
 symbol = ' '
-style = "fg:color_env"
+style = "fg:pine"
 
 [cmake]
 format = '[$symbol($version(->$name) )]($style)'
 version_format = '${raw}'
 symbol = ' '
+style = "fg:pine"
 
 [line_break]
 disabled = false
 
 [character]
 disabled = false
-success_symbol = '[❯](bold fg:color_ok)'
-error_symbol = '[❯](bold fg:color_danger)'
+success_symbol = '[❯](bold fg:pine)'
+error_symbol = '[❯](bold fg:love)'
 
 [time]
 disabled = false
 time_format = "%R"
-style = "fg:color_time"
+style = "fg:rose"
 format = '[ 󰔛 $time ]($style)'
 
 [cmd_duration]
 min_time = 2000
 format = '[ 󱫑 $duration ]($style)'
-style = 'fg:color_duration'
+style = 'fg:rose'
 show_milliseconds = false
 disabled = false
 
@@ -174,5 +157,5 @@ not_executable_symbol = '󰂭'
 not_found_symbol = '󰍉'
 sigint_symbol = '󰐊'
 signal_symbol = '󱐋'
-style = 'bold fg:color_danger'
+style = 'bold fg:love'
 recognize_signal_code = true
