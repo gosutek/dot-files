@@ -1,12 +1,12 @@
 from fabric import Application
 from fabric.utils import get_relative_path
 from fabric.widgets.label import Label
-from fabric.widgets.wayland import Window
+from fabric.widgets.wayland import WaylandWindow
 from fabric.widgets.centerbox import CenterBox
 from fabric.widgets.box import Box
 
 
-class Bar(Window):
+class Bar(WaylandWindow):
     def __init__(self, **kwargs):
         super().__init__(
             name="bar",
