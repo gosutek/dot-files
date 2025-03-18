@@ -1,3 +1,46 @@
+#bar {
+  border-radius: 0px;
+}
+
 #bar-inner {
+  margin: 8px;
   opacity: 1;
+}
+
+#workspaces {
+  padding: 14px;
+}
+
+#workspaces-container {
+  background-color: red
+}
+
+#workspaces > button {
+  min-width: 8px;
+  min-height: 8px;
+  border-radius: 16px;
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  background-color: blue;
+}
+
+#workspaces > button > label {
+  font-size: 0px;
+}
+
+#workspaces > button.empty:hover {
+  background-color: yellow;
+}
+
+#workspaces > button.urgent {
+  background-color: red;
+}
+
+#workspaces > button.active {
+  min-width: 48px;
+  min-height: 8px;
+  background-color: teal;
+}
+
+#workspaces > button.empty {
+  background-color: alpha(green, 0.25);
 }

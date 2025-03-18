@@ -4,6 +4,7 @@ from fabric.widgets.label import Label
 from fabric.widgets.wayland import WaylandWindow
 from fabric.widgets.centerbox import CenterBox
 from fabric.widgets.box import Box
+from fabric.hyprland.widgets import Workspaces, WorkspaceButton
 
 
 class Bar(WaylandWindow):
@@ -18,6 +19,13 @@ class Bar(WaylandWindow):
             all_visible=True,
         )
 
+        self.workspaces = Workspaces(
+            name="workspaces",
+            buttons=[WorkspaceButton(i, f"Workspace {i}") for i in range(10)],
+            invert_scroll=False,
+            empty_scroll=False,
+        )
+
         self.bar_inner = CenterBox(
             name="bar-inner",
             orientation="h",
@@ -27,7 +35,7 @@ class Bar(WaylandWindow):
                 name="start-container",
                 spacing=4,
                 orientation="h",
-                children=[Label("I am a child of the start")],
+                children=[Box(name="workspaces-container", children=[self.workspaces])],
             ),
             end_children=Box(
                 name="end-container",
