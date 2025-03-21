@@ -7,6 +7,12 @@ from fabric.widgets.box import Box
 from fabric.hyprland.widgets import Workspaces, WorkspaceButton
 
 
+class ODot(WorkspaceButton):
+    def __init__(self, id, label_text):
+        super().__init__(id, label_text)
+        self.dot = Box(name="dot")
+
+
 class Bar(WaylandWindow):
     def __init__(self, **kwargs):
         super().__init__(
@@ -21,7 +27,7 @@ class Bar(WaylandWindow):
 
         self.workspaces = Workspaces(
             name="workspaces",
-            buttons=[WorkspaceButton(i, f"Workspace {i}") for i in range(10)],
+            buttons=[ODot(i, f"Workspace {i}") for i in range(10)],
             invert_scroll=False,
             empty_scroll=False,
         )
