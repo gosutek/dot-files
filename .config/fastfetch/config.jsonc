@@ -1,0 +1,112 @@
+{
+  "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/dev/doc/json_schema.json",
+  "display": {
+    "color": {
+      "keys": "blue",
+      "title": "red",
+    },
+    "separator": " :: ",
+    "percent": {
+      "type": 2,
+    },
+  },
+  "modules": [
+    {
+      "type": "custom",
+      "format": "╔══════════════════════════════════════════╗",
+    },
+    {
+      "type": "OS",
+      "key": " 󰣇 OS",
+      "format": "{2}",
+      "keyColor": "#eb6f92",
+    },
+    {
+      "type": "kernel",
+      "key": " 󰫈 Kernel",
+      "keyColor": "#eb6f92",
+      "format": "{2}",
+    },
+    {
+      "type": "display",
+      "key": " 󰍹 Display",
+      "keyColor": "#ea9a97",
+      "format": "{1}x{2} @ {3}Hz·{6}",
+    },
+    {
+      "type": "wm",
+      "key": "  WM",
+      "format": "{1}·{5} via {3}",
+      "keyColor": "#c4a7e7",
+    },
+    {
+      "type": "shell",
+      "key": "  Shell",
+      "format": "{1}·{4}",
+      "keyColor": "#3e8fb0",
+    },
+    {
+      "type": "terminal",
+      "key": "  Terminal",
+      "format": "{1}·{4}",
+      "keyColor": "#9ccfd8",
+    },
+    {
+      "type": "packages",
+      "key": "  Packages",
+      "format": "{1}",
+      "keyColor": "#f6c177",
+    },
+    {
+      "type": "custom",
+      "format": "╚══════════════════════════════════════════╝",
+    },
+    "break",
+    {
+      "type": "title",
+      "key": " ",
+      "format": "{1}{7}{2}",
+      "keyColor": "#eb6f92",
+      "outputColor": "#eb6f92",
+    },
+    {
+      "type": "custom",
+      "format": "╔══════════════════════════════════════════╗",
+    },
+    {
+      "type": "board",
+      "key": "  MOBO",
+      "keyColor": "#3e8fb0",
+      "format": "{1}",
+    },
+    {
+      "type": "CPU",
+      "key": "  CPU",
+      "temp": true,
+      "keyColor": "#f6c177",
+      "format": "{1}@{7}",
+    },
+    {
+      "type": "GPU",
+      "key": " 󰘚 GPU",
+      "keyColor": "#eb6f92",
+      "temp": true,
+      "format": "{2}",
+    },
+    {
+      "type": "disk",
+      "key": "  Disk",
+      "keyColor": "#c4a7e7",
+      "format": "{2}·{13}·{21}",
+    },
+    {
+      "type": "mouse",
+      "key": " 󰍽 Mouse",
+      "keyColor": "#9ccfd8",
+    },
+    {
+      "type": "custom",
+      "format": "╚══════════════════════════════════════════╝",
+    },
+  ],
+}
