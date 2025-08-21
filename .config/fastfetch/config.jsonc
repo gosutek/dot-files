@@ -18,12 +18,13 @@
     "height": 10,
     "preserveAspectRatio": true,
     "padding": {
-      "top": 0,
-      "left": 0,
+      "top": 1,
+      "left": 2,
       "right": 0,
     },
   },
   "modules": [
+    "break",
     {
       "type": "title",
       "key": " ",
