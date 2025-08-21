@@ -12,9 +12,10 @@
   },
   "logo": {
     "type": "kitty",
-    "source": "/home/godot/.config/fastfetch/logos/*.jpg",
+    "source": "/home/godot/.config/fastfetch/logos/samurai_frog.png",
+    // "source": "/home/godot/.config/fastfetch/logos/*.jpg",
     "width": 30,
-    "height": 15,
+    "height": 10,
     "preserveAspectRatio": true,
     "padding": {
       "top": 0,
