@@ -1,5 +1,9 @@
 import Quickshell
 
-Scope {
+import "modules/bar"
+import "modules/watermark"
+
+ShellRoot {
     Bar {}
+    Watermark {}
 }
