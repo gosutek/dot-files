@@ -5,5 +5,4 @@ import "modules/watermark"
 
 ShellRoot {
     Bar {}
-    Watermark {}
 }
