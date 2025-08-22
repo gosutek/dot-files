@@ -24,7 +24,12 @@ Scope {
             implicitHeight: 30
 
             RowLayout {
-                anchors.fill: parent
+                id: middle_section
+                anchors {
+                    top: parent.top
+                    bottom: parent.bottom
+                    horizontalCenter: parent.horizontalCenter
+                }
                 Rectangle {
                     color: "teal"
                 }
