@@ -76,6 +76,14 @@ vim.o.scrolloff = 10
 -- See `:help 'confirm'`
 vim.o.confirm = true
 
+-- [[ Custom Options ]]
+
+-- Take indent for new line from previous line
+vim.o.autoindent = true
+
+-- Automatically read the file again when it's changed
+vim.o.autoread = true
+
 -- [[ Basic Keymaps ]]
 --  See `:help vim.keymap.set()`
 
