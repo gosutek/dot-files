@@ -200,6 +200,31 @@ require("lazy").setup({
 				changedelete = { text = "~" },
 			},
 		},
+		on_attach = function(bufnr)
+			local gitsigns = require("gitsigns")
+
+			local function map(mode, l, r, opts)
+				opts = opts or {} -- if opts is nil then make opts an empty table, possibly because vim.keymap.set doesn't accept nil
+				opts.buffer = bufnr
+				vim.keymap.set(mode, l, r, opts)
+			end
+
+			map("n", "]c", function()
+				if vim.wo.diff then
+					vim.cmd.normal({ "]c", bang = true })
+				else
+					gitsigns.nav_hunk("next")
+				end
+			end)
+
+			map("n", "[c", function()
+				if vim.wo.diff then
+					vim.cmd.normal({ "[c", bang = true })
+				else
+					gitsigns.nav_hunk("prev")
+				end
+			end)
+		end,
 	},
 
 	-- NOTE: Plugins can also be configured to run Lua code when they are loaded.
