@@ -1,43 +1,45 @@
 import Quickshell
+import Quickshell.Io
 import QtQuick
 
-import "modules/bar"
-import "modules/watermark"
+Variants {
+    model: Quickshell.screens
 
-ShellRoot {
-    Bar {}
+    delegate: Component {
+        PanelWindow {
+            required property var modelData
 
-    PanelWindow {
-        id: window
-        visible: true
-        color: "transparent"
-        implicitWidth: background.width
-        implicitHeight: background.height
+            screen: modelData
 
-        function hide() {
-            visible = false;
-        }
-
-        anchors {
-            bottom: true
-            left: true
-            right: true
-        }
-
-        mask: Region {
-            item: background
-        }
-
-        Rectangle {
-            id: background
-            implicitWidth: 200
-            implicitHeight: 200
             anchors {
-                bottom: parent.bottom
-                left: parent.left
-                right: parent.right
+                top: true
+                left: true
+                right: true
             }
-            color: "teal"
+
+            implicitHeight: 30
+            CustomText {
+                id: clock
+                text: "Hello!"
+
+                Process {
+                    id: dateProc
+                    command: ["date"]
+                    running: true
+
+                    stdout: StdioCollector {
+                        onStreamFinished: clock.text = text
+                    }
+                }
+
+                Timer {
+                    interval: 1000
+                    running: true
+                    repeat: true
+
+                    onTriggered: dateProc.running = true
+                }
+            }
         }
     }
 }
