@@ -65,7 +65,7 @@ Item {
     interval: 500
     repeat: true
     running: false
-    onTriggered: cursor_rect.visible = !cursor_rect.visible
+    onTriggered: {cursor_rect.visible = !cursor_rect.visible;}
   }
 
   onTextChanged: {
