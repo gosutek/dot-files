@@ -3,64 +3,96 @@
     "display": {
         "color": {
             "keys": "blue",
-            "title": "red",
+            "title": "red"
         },
         "separator": " :: ",
         "percent": {
-            "type": 2,
-        },
+            "type": 2
+        }
     },
     "logo": {
         "type": "kitty",
-        "source": "/home/godot/.config/fastfetch/logos/rose.svg",
+        "source": "/home/godot/.config/fastfetch/logos/rose.png",
         // "source": "/home/godot/.config/fastfetch/logos/*.jpg",
-        "width": 30,
-        "height": 10,
+        "width": 35,
+        "height": 15,
         "preserveAspectRatio": true,
         "padding": {
             "top": 1,
             "left": 2,
-            "right": 0,
-        },
+            "right": 5
+        }
     },
     "modules": [
         "break",
         {
             "type": "title",
-            "key": " ",
             "format": "{1}{7}{2}",
-            "keyColor": "#eb6f92",
-            "outputColor": "#eb6f92",
+            "outputColor": "#1bfd9c",
+            "color": {
+                "user": "#ffffff",
+                "host": "#1bfd9c"
+            }
         },
         {
-            "type": "OS",
-            "key": " 󰣇 OS",
+            "type": "separator",
+            "string": "·",
+            "times": 50
+        },
+        {
+            "type": "os",
+            "key": "OS",
             "format": "{2}",
-            "keyColor": "#eb6f92",
+            "keyColor": "#ffffff"
         },
         {
-            "type": "wm",
-            "key": "  WM",
-            "format": "{1}·{5}",
-            "keyColor": "#c4a7e7",
-        },
-        {
-            "type": "shell",
-            "key": "  Shell",
-            "format": "{1}·{4}",
-            "keyColor": "#3e8fb0",
-        },
-        {
-            "type": "terminal",
-            "key": "  Terminal",
-            "format": "{1}",
-            "keyColor": "#9ccfd8",
+            "type": "kernel",
+            "key": "Kernel",
+            "format": "{sysname}·{release}",
+            "keyColor": "#ffffff"
         },
         {
             "type": "packages",
-            "key": "  Packages",
-            "format": "{1}",
-            "keyColor": "#f6c177",
+            "key": "Packages",
+            "format": "{pacman}",
+            "keyColor": "#ffffff"
         },
-    ],
+        "break",
+        {
+            "type": "shell",
+            "key": "Shell",
+            "format": "{process-name}·{version}",
+            "keyColor": "#ffffff"
+        },
+        {
+            "type": "wm",
+            "key": "WM",
+            "format": "{1}·{5}",
+            "keyColor": "#ffffff"
+        },
+        {
+            "type": "terminal",
+            "key": "Terminal",
+            "format": "{1}",
+            "keyColor": "#ffffff"
+        },
+        {
+            "type": "terminalfont",
+            "key": "Terminal Font",
+            "format": "{name}",
+            "keyColor": "#ffffff"
+        },
+        "break",
+        {
+            "type": "disk",
+            "key": "Disk",
+            "keyColor": "#ffffff"
+        },
+        "break",
+        {
+            "type": "localip",
+            "key": "Local IP",
+            "keyColor": "#ffffff"
+        }
+    ]
 }
