@@ -36,6 +36,8 @@ Variants {
                 ColumnLayout {
                   anchors.fill: parent
 
+                  AbstractShape {}
+
                   Item {
                     id: rose_icon
                     Layout.fillWidth: true
