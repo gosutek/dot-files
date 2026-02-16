@@ -28,10 +28,10 @@
         {
             "type": "title",
             "format": "{1}{7}{2}",
-            "outputColor": "#1bfd9c",
+            "outputColor": "#dc1d22",
             "color": {
                 "user": "#ffffff",
-                "host": "#1bfd9c"
+                "host": "#dc1d22"
             }
         },
         {
