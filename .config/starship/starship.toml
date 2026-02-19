@@ -1,0 +1,108 @@
+"$schema" = 'https://starship.rs/config-schema.json'
+
+add_newline = true
+
+format = """
+$directory\
+$git_branch\
+$time\
+$status\
+$line_break\
+$character
+"""
+
+palette = "monoglow"
+
+[palettes.rose-pine-moon]
+overlay = '#393552'
+love = '#eb6f92'
+gold = '#f6c177'
+rose = '#ea9a97'
+pine = '#3e8fb0'
+foam = '#9ccfd8'
+iris = '#c4a7e7'
+
+[palettes.monoglow]
+bg = '#121212'
+gray1 = '#080808'
+gray2 = '#191919'
+gray3 = '#2a2a2a'
+gray4 = '#444444'
+gray5 = '#555555'
+gray6 = '#7a7a7a'
+gray7 = '#aaaaaa'
+gray8 = '#cccccc'
+gray9 = '#dddddd'
+gray10 = '#f1f1f1'
+fg = '#cccccc'
+white = '#ffffff'
+glow = "#d71f29"
+lack = '#708090'
+luster = '#deeeed'
+blue1 = '#b2d8d8'
+blue2 = '#66b2b2'
+
+[fill]
+symbol = ' '
+style = "fg:bg"
+disabled = true
+
+[directory]
+truncation_length = 3
+truncate_to_repo = true
+format = '[$path]($style)'
+style = "bold bg:glow fg:bg"
+truncation_symbol = ".../"
+home_symbol = "~"
+
+[git_branch]
+style = "fg:gray5"
+format = '[( $branch )]($style)'
+ignore_branches = []
+truncation_length = 25
+truncation_symbol = "..."
+always_show_remote = false
+disabled = false
+
+[git_commit]
+style = "fg:foam"
+format = "[(( $tag)( @$hash) )]($style)"
+commit_hash_length = 7
+only_detached = true
+tag_symbol = "󰓼 "
+tag_disabled = false
+disabled = false
+
+[line_break]
+disabled = false
+
+[character]
+disabled = false
+success_symbol = '[>](bold fg:glow)'
+error_symbol = '[>](bold fg:glow)'
+
+[time]
+disabled = false
+time_format = "%X"
+style = "fg:gray4"
+format = '[ 󰔛 ](fg:glow)[$time ]($style)'
+
+[cmd_duration]
+min_time = 2000
+format = '[ 󱫑 $duration ]($style)'
+style = 'fg:rose'
+show_milliseconds = false
+disabled = false
+
+[status]
+format = '[( $symbol( $common_meaning)( $signal_name) )]($style)'
+map_symbol = true
+pipestatus = true
+symbol = '󰅙'
+success_symbol = ''
+not_executable_symbol = '󰂭'
+not_found_symbol = '󰍉'
+sigint_symbol = '󰐊'
+signal_symbol = '󱐋'
+style = 'bold fg:love'
+recognize_signal_code = true
