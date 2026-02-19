@@ -33,10 +33,11 @@ Variants {
         anchors.margins: 100
         spacing: 20
 
-        Rectangle {
+        StyledRect {
           Layout.fillWidth: true
           Layout.fillHeight: true
-          color: "#101010"
+          color_1: "#d71f29"
+          color_2: "#101010"
 
           ColumnLayout {
             anchors.fill: parent
@@ -91,10 +92,11 @@ Variants {
           }
         }
 
-        Rectangle {
+        StyledRect {
           Layout.fillHeight: true
           Layout.preferredWidth: parent.width * (4 / 6)
-          color: "#101010"
+          color_1: "#d71f29"
+          color_2: "#101010"
 
           ColumnLayout {
             anchors.fill: parent
