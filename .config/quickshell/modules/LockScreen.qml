@@ -89,6 +89,8 @@ Variants {
               Layout.fillWidth: true
               Layout.fillHeight: true
             }
+
+            Pyramid {}
           }
         }
 
