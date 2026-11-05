@@ -1,0 +1,7 @@
+[user]
+	name = GosuTek
+	email = gosutek@gmail.com
+[init]
+	defaultBranch = master
+[core]
+	editor = nvim
