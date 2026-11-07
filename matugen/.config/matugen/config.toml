@@ -1,0 +1,12 @@
+[config]
+version_check = true
+
+[templates.hyprland]
+input_path = '~/.config/matugen/templates/hyprland.lua'
+output_path = '~/.cache/matugen/hyprland.lua'
+post_hook = 'hyprctl reload'
+
+[templates.kitty]
+input_path = '~/.config/matugen/templates/kitty.conf'
+output_path = '~/.cache/matugen/kitty.conf'
+post_hook = "pkill -SIGUSR1 kitty"

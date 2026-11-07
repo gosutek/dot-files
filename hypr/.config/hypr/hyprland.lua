@@ -1,6 +1,8 @@
 require("modules.monitors")
 require("modules.autostart")
 require("modules.binds")
+require("modules.colors")
+require("modules.aesthetics")
 
 -------------------------------
 ---- ENVIRONMENT VARIABLES ----
@@ -41,11 +43,6 @@ hl.config({
         gaps_in  = 8,
         gaps_out = 16,
 
-        col = {
-            active_border   = { colors = {"rgba(33ccffee)", "rgba(00ff99ee)"}, angle = 45 },
-            inactive_border = "rgba(595959aa)",
-        },
-
         layout = "scrolling",
     },
 
@@ -54,26 +51,6 @@ hl.config({
         explicit_column_widths = '0.333, 0.5, 0.667, 1.0',
         fullscreen_on_one_column = false,
         focus_fit_method = 1,
-    },
-
-    decoration = {
-        -- Change transparency of focused and unfocused windows
-        active_opacity   = 1.0,
-        inactive_opacity = 1.0,
-
-        shadow = {
-            enabled      = true,
-            range        = 4,
-            render_power = 3,
-            color        = 0xee1a1a1a,
-        },
-
-        blur = {
-            enabled   = true,
-            size      = 3,
-            passes    = 1,
-            vibrancy  = 0.1696,
-        },
     },
 
     animations = {
@@ -166,6 +143,7 @@ hl.config({
     misc = {
         force_default_wallpaper = 0,    -- Set to 0 or 1 to disable the anime mascot wallpapers
         disable_hyprland_logo   = true, -- If true disables the random hyprland logo / anime girl background. :(
+        mouse_move_enables_dpms = true,
     },
 })
 
