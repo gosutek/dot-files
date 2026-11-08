@@ -66,6 +66,10 @@ require("lazy").setup({
             priority = 1000,
             opts = {},
         },
+        {
+            'mason-org/mason.nvim',
+            opts = {},
+        }
     },
 })
 
@@ -121,8 +125,13 @@ vim.lsp.config('clangd', {
     root_markers = { 'compile_commands.json', '.clangd', 'CMakePresets.json', '.git' },
 })
 
+vim.lsp.config('taplo', {
+    cmd = { 'taplo', 'lsp', 'stdio' },
+    filetypes = { 'toml' },
+    root_markers = { '.taplo.toml', 'taplo.toml', '.git' },
+})
 
-vim.lsp.enable({'lua_ls', 'clangd'})
+vim.lsp.enable({'lua_ls', 'clangd', 'taplo'})
 vim.diagnostic.config({ virtual_text = true })
 
 vim.cmd('colorscheme monoglow-z')

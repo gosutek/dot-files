@@ -1,0 +1,40 @@
+"$schema" = 'https://starship.rs/config-schema.json'
+
+add_newline = false
+
+format = """
+$sudo$directory
+$character
+"""
+
+right_format = """
+$cmd_duration
+"""
+
+[fill]
+symbol = ''
+style = 'bold white'
+
+[character]
+format = "$symbol "
+success_symbol = "[ ](bold white)"
+error_symbol = "[ 󰝤](bold red)"
+
+[directory]
+home_symbol = '~'
+truncation_length = 2
+read_only = ' '
+truncation_symbol = ".../"
+format = "[$read_only]($read_only_style) [$path]($style)"
+
+[sudo]
+format = "[$symbol]($style)"
+style = ""
+symbol = '󰊖'
+disabled = false
+
+[cmd_duration]
+show_milliseconds = true
+format = "[$duration]($style) "
+style = ""
+

@@ -2,6 +2,8 @@ fish_add_path --path ~/.local/bin
 
 if status is-interactive
     set fish_greeting
+
+    starship init fish | source
 	zoxide init fish | source
 
     abbr -a l 'ls -lAh1 --group-directories-first'
