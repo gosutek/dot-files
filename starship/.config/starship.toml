@@ -22,9 +22,9 @@ error_symbol = "[ 󰝤](bold red)"
 
 [directory]
 home_symbol = '~'
-truncation_length = 2
+truncation_length = 3
 read_only = ' '
-truncation_symbol = ".../"
+truncation_symbol = "…/"
 format = "[$read_only]($read_only_style) [$path]($style)"
 
 [sudo]
