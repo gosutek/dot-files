@@ -1,0 +1,32 @@
+#!/usr/bin/env bash
+
+set -euo pipefail # exit at the first fail in short
+
+repo="$(cd "$(dirname "$0")"&& pwd)"
+backup="$HOME/.local/state/dotfiles/backup/$(date +%F_%H%M%S)"
+opts=(-a --delete --itemize-changes --backup --backup-dir="$backup")
+[[ "${1:-}" == "-n" ]] && opts+=(--dry-run)
+
+declare -A map=(
+    [hypr]="$HOME/.config/hypr"
+    [nvim]="$HOME/.config/nvim"
+    [fish]="$HOME/.config/fish"
+    [kitty]="$HOME/.config/kitty"
+    [matugen]="$HOME/.config/matugen"
+    [git]="$HOME/.config/git"
+    [lazygit]="$HOME/.config/lazygit"
+)
+
+for src in "${!map[@]}"; do
+    rsync "${opts[@]}" \
+        --filter='P fish_variables' \
+        --exclude=lazy-lock.json \
+        "$repo/$src/" "${map[$src]}/"
+done
+
+rsync -a --itemize-changes "${dry[@]}" "$repo/starship/starship.toml" "$HOME/.config/starship.toml"
+
+# rsync -a --ignore-existing --itemize-changes "${opts[@]:5}" "$repo/seed/" "$HOME/"
+
+# sudo rsync -a --itemize-changes --chown=root:root --chmod=D755,F644 \
+#     ${1:+--dry-run} "$repo/etc/" /etc/
